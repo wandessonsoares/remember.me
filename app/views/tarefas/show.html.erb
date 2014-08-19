@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Tarefa -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @tarefa.titulo %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:titulo) %>:</strong></dt>
+  <dd><%= @tarefa.titulo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= @tarefa.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hora) %>:</strong></dt>
+  <dd><%= @tarefa.hora %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descricao) %>:</strong></dt>
+  <dd><%= @tarefa.descricao %></dd>
+</dl>
 
-<p>
-  <strong>Data:</strong>
-  <%= @tarefa.data %>
-</p>
-
-<p>
-  <strong>Hora:</strong>
-  <%= @tarefa.hora %>
-</p>
-
-<p>
-  <strong>Descricao:</strong>
-  <%= @tarefa.descricao %>
-</p>
-
-<%= link_to 'Editar', edit_tarefa_path(@tarefa) %> |
-<%= link_to 'Voltar', tarefas_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              tarefas_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tarefa_path(@tarefa), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tarefa_path(@tarefa),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
