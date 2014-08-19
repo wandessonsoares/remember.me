@@ -4,7 +4,7 @@ class TarefasController < ApplicationController
   # GET /tarefas
   # GET /tarefas.json
   def index
-    @tarefas = Tarefa.order('titulo').page(params['page'])
+    @tarefas = Tarefa.by_order.page(params['page'])
   end
 
   # GET /tarefas/1
