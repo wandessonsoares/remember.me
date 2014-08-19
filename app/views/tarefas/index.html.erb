@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to tarefa.id, tarefa_path(tarefa) %></td>
         <td><%= tarefa.titulo %></td>
-        <td><%= tarefa.data %></td>
+        <td><%= formata_data(tarefa.data) %></td>
         <td><%= tarefa.hora %></td>
         <td><%= tarefa.descricao %></td>
         <td><%=l tarefa.created_at %></td>

@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:titulo) %>:</strong></dt>
   <dd><%= @tarefa.titulo %></dd>
   <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
-  <dd><%= @tarefa.data %></dd>
+  <dd><%= formata_data(@tarefa.data) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:hora) %>:</strong></dt>
   <dd><%= @tarefa.hora %></dd>
   <dt><strong><%= model_class.human_attribute_name(:descricao) %>:</strong></dt>

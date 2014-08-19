@@ -2,5 +2,5 @@ Rails.application.routes.draw do
   resources :users
   resources :tarefas
 
-  root :to => "home#index"
+  root "home#index"
 end
