@@ -37,6 +37,8 @@
   </tbody>
 </table>
 
+<%= paginate  @tarefas %><br>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_tarefa_path,
             :class => 'btn btn-primary' %>

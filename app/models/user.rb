@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 	validates :senha, confirmation: true, presence: true
 	validates :email, format: {:with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, message: "Insira um email válido."}
 	validates :email, :uniqueness => true
+
+	paginates_per 3
 end
