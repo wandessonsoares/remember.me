@@ -6,6 +6,7 @@
 #
 development:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: tarefas
   pool: 5
@@ -14,6 +15,7 @@ development:
 
 test:
   adapter: postgresql
+  host: localhost
   encoding: unicode
   database: tarefas
   pool: 5

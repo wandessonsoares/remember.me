@@ -1,9 +1,6 @@
 class User < ActiveRecord::Base
-	validates :nome_completo, :email, :senha, :presence => true
-	validates :senha, :length => { :minimum => 4}
-	validates :senha, confirmation: true, presence: true
-	validates :email, format: {:with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/, message: "Insira um email válido."}
-	validates :email, :uniqueness => true
-
-	paginates_per 3
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end
